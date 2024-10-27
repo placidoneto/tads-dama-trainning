@@ -1,0 +1,186 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/header.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/index-main.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+
+    <title>Index</title>
+    
+    <style>
+      .main-div1{
+        background-image: url("{% static 'img/banner-dama.png' %}");
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: contain;
+        padding: 5px;
+      }
+    </style>
+    
+  </head>
+
+  <body>
+    <header id="cabecalho" class="borda0">
+      <div class="borda0 header-div header-div-left">
+        <a href="{% url 'dama:index' %}">
+          <img id="logo-img" src="{% static 'img/logo-dama.png' %}" alt="logomarca do Dama" />
+        </a>
+      </div>
+      <nav class="borda0 header-nav">
+        <ul>
+          <li><a href="{% url 'dama:index' %}">Home</a></li>
+          <li><a href="#">Quem Somos</a></li>
+          <li><a href="#">Conheça seus direitos</a></li>
+          <li><a href="#">Rede de apoio</a></li>
+          <li><a href="{% url 'dama:mural' %}">Mural de Força</a></li>
+        </ul>
+      </nav>
+      <div class="borda0 header-div-right">
+
+        {% if request.user.is_authenticated %}
+
+        <div id="usuario-logado" class="borda2">
+          <a href="{% url 'dama:perfil' %}">{{ request.user.username }}!</a>
+        </div>
+        
+        <div id="logout" class="borda2">
+          <form method="post" action="{% url 'dama:logout' %}" style="display: inline;">
+            {% csrf_token %}
+            <button class="button-header" type="submit">Sair</button>
+          </form>
+        </div>
+
+        {% else %}
+
+        <button id="header-login" class="button-header">
+          <a href="{% url 'dama:login' %}">Login</a>
+        </button>
+        <button id="header-conta" class="button-header">
+          <a href="{% url 'dama:cadastro' %}">Criar Conta</a>
+        </button>
+
+        {% endif %}
+      </div>
+    </header>
+
+    <main id="main" class="borda0">
+
+      <div class="main-div main-div1 borda0">
+        <div class="borda0 main-div1-left">
+        </div>
+        <div class="borda0 main-div1-right">
+          <div class="borda0 main-div1-right-top">
+            <p id="missao">
+              Enfrentando o medo e o silêncio <br>com
+              <span>conscientização e empoderamento,</span><br />para  juntos
+              <span> combatermos</span> a violência contra a mulher,<br> no estado do Rio Grande do Norte.
+            </p>
+          </div>
+          <div class="borda0 main-div1-right-bottom">
+            <button id="denuncia-banner" class="button-main">
+              <a style="text-decoration: none; color: inherit;display: block;" href="{% url 'dama:denuncia' %}">
+                Faça sua Denúncia
+              </a>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-div2 borda0">
+        <div class="main-div2-left borda0">
+          <img src="{% static 'img/circulo.png' %}" alt="logo do dama">
+        </div>
+        <div class="main-div2-right borda0">
+          <div class="main-div2-right-top borda0">
+            <p>Conhecer uma história de <span>superação</span> à violência<br> 
+              pode trazer apoio e ainda <span>salvar mulheres!</span><br>
+              Visite nosso <span>Mural de Força</span> e conheça
+               relatos <br> de <span>superação</span> de mulheres que sofreram violência.
+              
+            </p>
+          </div>
+          <div class="main-div2-right-bottom borda0">
+            <button id="mural" class="button-main-div2">
+              <a style="text-decoration: none; color: inherit;display: block;" href="{% url 'dama:mural' %}">
+                Mural de Força
+              </a>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="main-div main-div3" class="main-div3 borda0">
+        <div class="borda0 main-div3-left">
+          <article class="article-direitos borda0">
+            <h1>Conheça seus direitos</h1>
+            <p>Nós do <span>DAMA</span> acreditamos que <span>conhecimento também é poder!</span><br>
+              Por isso, trazemos até você algumas leis que <span>protegem, informam e ajudam</span> as mulheres no Brasil.
+            </p>
+          </article>
+        </div>
+        <div class="borda0 main-div3-right">
+          <ul class="carrossel borda0">
+            <li class="borda0">
+              <input type="radio" id="slide1" name="slide" checked>
+              <label for="slide1"></label>
+              <img src="{% static 'img/feminicidio.jpeg' %}" alt="">
+            </li>
+            <li>
+              <input type="radio" id="slide2" name="slide" checked>
+              <label for="slide2"></label>
+              <img src="{% static 'img/carolina.jpeg' %}" alt="">
+            </li>
+            <li>
+              <input type="radio" id="slide3" name="slide" checked>
+              <label for="slide3"></label>
+              <img src="{% static 'img/joana.jpeg' %}" alt="">
+            </li>
+            <li>
+              <input type="radio" id="slide4" name="slide" checked>
+              <label for="slide4"></label>
+              <img src="{% static 'img/importunacao.jpeg' %}" alt="">
+            </li>
+            <li>
+              <input type="radio" id="slide5" name="slide" checked>
+              <label for="slide5"></label>
+              <img src="{% static 'img/minuto.jpeg' %}" alt="">
+            </li>
+        </ul>
+        </div>
+
+      </div> 
+
+    </main>
+
+    <footer class="borda0">
+        <div class="footer-div footer-div-left borda0">
+            <p>emergencia?</p>
+            <h1><span>ligue 180</span></h1>
+        </div>
+        <div class="footer-div footer-div-center borda0">
+          <div class="footer-div-center-top borda0" >
+              <h1>Ajuda</h1>
+          </div>
+
+          <div class="footer-div-center-bottom borda0">
+            <p><a href="#">Sobre nós</a></p>
+            <p><a href="#">Seja apoiador</a></p>
+            <p><a href="#">Seja voluntário</a></p>
+            <p><a href="#">Conheça seus direitos</a></p>
+          </div>
+
+        </div>
+
+        <div class="footer-div footer-div-right borda0">
+          <img src="{% static 'img/logo_rn.png' %}" alt="logo_rn">
+        </div>
+    </footer>
+
+  </body>
+</html>

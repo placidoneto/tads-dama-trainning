@@ -1,0 +1,61 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/header.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/index-main.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+
+    <title>Perfil</title>
+</head>
+
+<body>
+
+    {% if not mensagem_erro %}
+        <h1>Manter perfil do usario - {{ nome_login }} </h1>
+        <h2>Tipo do Usuario: {{ tipo_usuario }}</h2>
+
+        {% if tipo_usuario == 'profissional' %}
+            <p>Nome Completo: {{ nome_completo }}</p>
+            <p>Cadastro CRP: {{ cadastro_crp }}</p>
+            <p>Telefone: {{ telefone }}</p>
+            <p>Email: {{ email }}</p>
+
+
+        {% elif tipo_usuario == 'ong' %}
+            <p>Razão Social: {{ razao_social }}</p>
+            <p>CNPJ: {{ cnpj }}</p>
+            <p>Telefone: {{ telefone }}</p>
+            <p>Email: {{ email }}</p>
+
+        {% else %}
+            <p style="color: red;">{{ mensagem_erro }}</p>
+        {% endif %}    
+
+    {% endif %}
+
+    <button id="atualizar-conta" class="button-header">
+        <a href="{% url 'dama:index' %}">Atualizar Perfil</a>
+    </button>
+    
+    <button id="deletar-conta" class="button-header">
+        <a href="{% url 'dama:index' %}">Excluir Perfil</a>
+    </button>
+
+    <button id="voltar" class="button-header">
+        <a href="{% url 'dama:index' %}">Voltar</a>
+    </button>
+
+    <div id="excluir">
+        
+    </div>
+</body>
+
+</html>

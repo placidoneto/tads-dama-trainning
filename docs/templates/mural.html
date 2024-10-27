@@ -1,0 +1,463 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/header.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/mural-main.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+
+
+    <title>Mural de Força</title>
+  </head>
+
+  <body>
+    <header class="borda0">
+      <div class="borda0 header-div header-div-left">
+        <a href="{% url 'dama:index' %}">
+          <img id="logo-img" src="{% static 'img/logo-dama.png' %}" alt="logomarca do Dama" />
+        </a>
+      </div>
+      <nav class="borda0 header-nav">
+        <ul>
+          <li><a href="{% url 'dama:index' %}">Home</a></li>
+          <li><a href="#">Quem Somos</a></li>
+          <li><a href="#">Conheça seus direitos</a></li>
+          <li><a href="#">Rede de apoio</a></li>
+          <li><a href="{% url 'dama:denuncia' %}">Denunciar</a></li>
+        </ul>
+      </nav>
+      <div class="borda0 header-div-right">
+        <button id="header-login" class="button-header">
+          <a href="{% url 'dama:login' %}">Login</a>
+        </button>
+        <button id="header-conta" class="button-header">
+          <a href="{% url 'dama:cadastro' %}">Criar Conta</a>
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+
+      <div id="main-div" class="borda0">
+        <table class="borda0">
+            <thead id="thead">
+                <tr id="thead" class="borda0">
+                    <th id="mural" class="borda0" colspan="5">Mural de Força</th>
+                </tr>
+                <tr id="intervalo" class="borda0">
+                  <th class="borda0" colspan="5">
+                      <label for="inicio">De:</label>
+                      <input type="date" id="inicio" name="inicio">
+                      <label for="fim">Até:</label>
+                      <input type="date" id="fim" name="fim">
+                      <button id="filtroButton">Filtrar</button>
+                  </th>
+              </tr>
+            </thead>
+            <tbody class="borda0">
+              <tr>
+                <td class="coluna-1" data-column="1">
+                  <div class=" borda0 div-texto">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, 
+                      sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+                      Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit...
+                    </p>
+                  </div>
+                  <div class="borda0 div-usuario">
+                    <div class="borda0 div-profile">
+                      <img src="{% static 'img/profile.png' %}" alt="icone de usuario">
+                    </div>
+                    <div class="borda0 div-nome">
+                      <p>anonimo12345</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="coluna-2" data-column="2">
+                  <div class="borda0 div-texto">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, 
+                      sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+                      Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit...
+                    </p>
+                  </div>
+                  <div class="borda0 div-usuario">
+                    <div class="borda0 div-profile">
+                      <img src="{% static 'img/profile.png' %}" alt="icone de usuario">
+                    </div>
+                    <div class="borda0 div-nome">
+                      <p>anonimo12345</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="coluna-3" data-column="3"> 
+                  <div class="borda0 div-texto">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, 
+                      sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+                      Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit...
+                    </p>
+                  </div>
+                  <div class="borda0 div-usuario">
+                    <div class="borda0 div-profile">
+                      <img src="{% static 'img/profile.png' %}" alt="icone de usuario">
+                    </div>
+                    <div class="borda0 div-nome">
+                      <p>anonimo12345</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="coluna-4" data-column="4"> 
+                  <div class="borda0 div-texto">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, 
+                      sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+                      Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit...
+                    </p>
+                  </div>
+                  <div class="borda0 div-usuario">
+                    <div class="borda0 div-profile">
+                      <img src="{% static 'img/profile.png' %}" alt="icone de usuario">
+                    </div>
+                    <div class="borda0 div-nome">
+                      <p>anonimo12345</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="coluna-5" data-column="5"> 
+                  <div class="borda0 div-texto">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, 
+                      sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+                      Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit...
+                    </p>
+                  </div>
+                  <div class="borda0 div-usuario">
+                    <div class="borda0 div-profile">
+                      <img src="{% static 'img/profile.png' %}" alt="icone de usuario">
+                    </div>
+                    <div class="borda0 div-nome">
+                      <p>anonimo12345</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="coluna-1" data-column="1"> 
+                <div class="borda0 div-texto">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, 
+                    sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit...
+                  </p>
+                </div>
+                <div class="borda0 div-usuario">
+                  <div class="borda0 div-profile">
+                    <img src="{% static 'img/profile.png' %}" alt="icone de usuario">
+                  </div>
+                  <div class="borda0 div-nome">
+                    <p>anonimo12345</p>
+                  </div>
+                </div>
+              </td>
+                <td class="coluna-2" data-column="2"> 
+                <div class="borda0 div-texto">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, 
+                    sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit...
+                  </p>
+                </div>
+                <div class="borda0 div-usuario">
+                  <div class="borda0 div-profile">
+                    <img src="{% static 'img/profile.png' %}" alt="icone de usuario">
+                  </div>
+                  <div class="borda0 div-nome">
+                    <p>anonimo12345</p>
+                  </div>
+                </div>
+              </td> 
+                <td class="coluna-3" data-column="3"> 
+                <div class="borda0 div-texto">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, 
+                    sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit...
+                  </p>
+                </div>
+                <div class="borda0 div-usuario">
+                  <div class="borda0 div-profile">
+                    <img src="{% static 'img/profile.png' %}" alt="icone de usuario">
+                  </div>
+                  <div class="borda0 div-nome">
+                    <p>anonimo12345</p>
+                  </div>
+                </div>
+              </td>
+                <td class="coluna-4" data-column="4">
+                <div class="borda0 div-texto">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, 
+                    sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit...
+                  </p>
+                </div>
+                <div class="borda0 div-usuario">
+                  <div class="borda0 div-profile">
+                    <img src="{% static 'img/profile.png' %}" alt="icone de usuario">
+                  </div>
+                  <div class="borda0 div-nome">
+                    <p>anonimo12345</p>
+                  </div>
+                </div>
+              </td>
+              <td class="coluna-5" data-column="5"> 
+                <div class="borda0 div-texto">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, 
+                    sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit...
+                  </p>
+                </div>
+                <div class="borda0 div-usuario">
+                  <div class="borda0 div-profile">
+                    <img src="{% static 'img/profile.png' %}" alt="icone de usuario">
+                  </div>
+                  <div class="borda0 div-nome">
+                    <p>anonimo12345</p>
+                  </div>
+                </div>
+              </td>
+              </tr>
+              
+              <tr>
+                  <td class="coluna-1" data-column="1"> 
+                  <div class="borda0 div-texto">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, 
+                      sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+                      Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit...
+                    </p>
+                  </div>
+                  <div class="borda0 div-usuario">
+                    <div class="borda0 div-profile">
+                      <img src="{% static 'img/profile.png' %}" alt="icone de usuario">
+                    </div>
+                    <div class="borda0 div-nome">
+                      <p>anonimo12345</p>
+                    </div>
+                  </div>
+                </td>
+                  <td class="coluna-2" data-column="2"> 
+                  <div class="borda0 div-texto">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, 
+                      sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+                      Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit...
+                    </p>
+                  </div>
+                  <div class="borda0 div-usuario">
+                    <div class="borda0 div-profile">
+                      <img src="{% static 'img/profile.png' %}" alt="icone de usuario">
+                    </div>
+                    <div class="borda0 div-nome">
+                      <p>anonimo12345</p>
+                    </div>
+                  </div>
+                </td>
+                  <td class="coluna-3" data-column="3"> 
+                  <div class="borda0 div-texto">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, 
+                      sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+                      Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit...
+                    </p>
+                  </div>
+                  <div class="borda0 div-usuario">
+                    <div class="borda0 div-profile">
+                      <img src="{% static 'img/profile.png' %}" alt="icone de usuario">
+                    </div>
+                    <div class="borda0 div-nome">
+                      <p>anonimo12345</p>
+                    </div>
+                  </div>
+                </td>
+                  <td class="coluna-4" data-column="4"> 
+                  <div class="borda0 div-texto">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, 
+                      sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+                      Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit...
+                    </p>
+                  </div>
+                  <div class="borda0 div-usuario">
+                    <div class="borda0 div-profile">
+                      <img src="{% static 'img/profile.png' %}" alt="icone de usuario">
+                    </div>
+                    <div class="borda0 div-nome">
+                      <p>anonimo12345</p>
+                    </div>
+                  </div>
+                </td>
+                <td class="coluna-5" data-column="5"> 
+                  <div class="borda0 div-texto">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, 
+                      sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+                      Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit...
+                    </p>
+                  </div>
+                  <div class="borda0 div-usuario">
+                    <div class="borda0 div-profile">
+                      <img src="{% static 'img/profile.png' %}" alt="icone de usuario">
+                    </div>
+                    <div class="borda0 div-nome">
+                      <p>anonimo12345</p>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              
+              <tr>
+                  <td class="coluna-1" data-column="1"> 
+                <div class="borda0 div-texto">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, 
+                    sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit...
+                  </p>
+                </div>
+                <div class="borda0 div-usuario">
+                  <div class="borda0 div-profile">
+                    <img src="{% static 'img/profile.png' %}" alt="icone de usuario">
+                  </div>
+                  <div class="borda0 div-nome">
+                    <p>anonimo12345</p>
+                  </div>
+                </div>
+              </td>
+                <td class="coluna-2" data-column="2"> 
+                <div class="borda0 div-texto">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, 
+                    sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit...
+                  </p>
+                </div>
+                <div class="borda0 div-usuario">
+                  <div class="borda0 div-profile">
+                    <img src="{% static 'img/profile.png' %}" alt="icone de usuario">
+                  </div>
+                  <div class="borda0 div-nome">
+                    <p>anonimo12345</p>
+                  </div>
+                </div>
+              </td>
+                <td class="coluna-3" data-column="3"> 
+                <div class="borda0 div-texto">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, 
+                    sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit...
+                  </p>
+                </div>
+                <div class="borda0 div-usuario">
+                  <div class="borda0 div-profile">
+                    <img src="{% static 'img/profile.png' %}" alt="icone de usuario">
+                  </div>
+                  <div class="borda0 div-nome">
+                    <p>anonimo12345</p>
+                  </div>
+                </div>
+              </td>
+                <td class="coluna-4" data-column="4"> 
+                <div class="borda0 div-texto">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, 
+                    sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit...
+                  </p>
+                </div>
+                <div class="borda0 div-usuario">
+                  <div class="borda0 div-profile">
+                    <img src="{% static 'img/profile.png' %}" alt="icone de usuario">
+                  </div>
+                  <div class="borda0 div-nome">
+                    <p>anonimo12345</p>
+                  </div>
+                </div>
+              </td>
+              <td class="coluna-5" data-column="5"> 
+                <div class="borda0 div-texto">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, 
+                    sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit...
+                  </p>
+                </div>
+                <div class="borda0 div-usuario">
+                  <div class="borda0 div-profile">
+                    <img src="{% static 'img/profile.png' %}" alt="icone de usuario">
+                  </div>
+                  <div class="borda0 div-nome">
+                    <p>anonimo12345</p>
+                  </div>
+                </div>
+              </td>
+              </tr>
+
+            </tbody>
+
+            <tfoot>
+              <tr id="thead" class="borda0">
+                <th class="borda0" colspan="5">(botões do carrossel)</th>
+            </tr>
+            </tfoot>
+        </table>
+      </div>
+    </main>
+
+    <div id="relato-modal" class="oculto">
+
+      <div id="relato" class="relato borda0">
+        <div class="relato-header borda0">
+          <img id="fechar-modal" src="{% static 'img/dustbin_120823.svg' %}" alt="icone de fechamento dos comentarios">
+        </div>
+        <section>
+          <div class="usuario-id borda0">
+            <img src="{% static 'img/profile.png' %}" alt="icone de usuario">
+            <p>anonimo12345</p>
+          </div>
+          <div class="relato-texto">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. 
+              Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur. 
+              Quis aute iure reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+              Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div> 
+        </section>
+      </div>
+
+      <div id="comentarios" class="borda0">
+        <!-- comentarios vem aqui -->
+      </div>
+
+      <!-- Campo de Entrada para Novo Comentário -->
+      <div id="input-comentario" class="borda0">
+        <textarea name="comentario" id="comentario-input" placeholder="Escreva um comentário..." maxlength="190"></textarea>
+        <img id="submit-comentario" src="{% static 'img/redo-arrow-1_icon-icons.com_56892.svg' %}" alt="enviar comentario" onclick="novoComentario()" >
+      </div>
+
+    </div>
+
+
+    <footer class="borda0">
+        <div class="footer-div footer-div-left borda0">
+            <p>emergencia?</p>
+            <h1><span>ligue 180</span></h1>
+        </div>
+        <div class="footer-div footer-div-center borda0">
+          <div class="footer-div-center-top borda0" >
+              <h1>Ajuda</h1>
+          </div>
+          <div class="footer-div-center-bottom borda0">
+            <p><a href="#">Sobre nós</a></p>
+            <p><a href="#">Seja apoiador</a></p>
+            <p><a href="#">Seja voluntário</a></p>
+            <p><a href="#">Conheça seus direitos</a></p>
+          </div>
+        </div>
+        <div class="footer-div footer-div-right borda0">
+          <img src="{% static 'img/logo_rn.png' %}" alt="">
+        </div>
+    </footer>
+
+    <script src="{% static 'js/mural.js' %}"></script>
+  </body>
+</html>

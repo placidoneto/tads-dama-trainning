@@ -1,0 +1,285 @@
+
+#main-div{
+    width: 100%;
+    max-width: 1366px;
+    height: 100%; 
+    display: flex;
+    padding: 11.5px;
+    overflow-x: none;
+}
+
+
+table{
+    width: 100%;
+    padding: 45px;
+    border-spacing: 20px;
+    user-select: none; 
+}
+
+tbody{
+    border-collapse: separate;
+    border-spacing: 30px;
+    user-select: none; 
+}
+
+#mural{
+    font-size: 40px;
+}
+
+#intervalo th {
+   font-size: 20px;
+   align-items: center;
+   text-align: right;
+}
+
+#intervalo th input{
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid rgba(252, 249, 218,1);
+}
+
+#intervalo th input{
+    margin-right: 20px;
+}
+
+tr{
+    border: 1px solid #000;
+    user-select: none;
+}
+
+.coluna-1{
+    background-color: rgba(235, 241, 243, 1);
+}
+.coluna-2{
+    background-color: rgba(250, 226, 226, 1);
+}
+.coluna-3{
+    background-color: rgba(230, 250, 227, 1);
+}
+.coluna-4{
+    background-color: rgba(227, 228, 250, 1);
+}
+.coluna-5{
+    background-color: rgba(252, 249, 218, 1);
+}
+
+th{
+    padding: 8px; /* Espaçamento interno das células */
+    font-size: 30px;
+    user-select: none;
+}
+
+td{
+    border: 1px solid rgba(252, 249, 218, 1);
+    vertical-align: top;
+    padding: 2px;
+    height: 200px; /* Defina uma altura para o td para visualizar o efeito */
+    flex-direction: column; /* Direção da coluna para empilhar divs verticalmente */
+    transition: box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
+    border-radius: 5px;
+    cursor: pointer;
+    user-select: none;
+}
+
+td:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+}
+
+
+.div-texto{
+    height: 80%;
+    width: 100%;
+    margin-bottom: 1px;
+    text-align: left;
+    justify-content: center;
+    align-content: center;
+    padding: 10px;
+    font-size: 15px;
+    user-select: none;
+}
+
+.div-usuario{
+    height: 20%;
+    width: 100%;
+    display: flex;
+    padding: 2px;
+    user-select: none;
+}
+
+.div-profile{
+    width: 30%;
+    height: 100%;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+}
+
+.div-profile img{
+    width: auto;
+    height: auto;
+}
+
+.div-nome{
+    width: 70%;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    text-align: left;
+    padding: 2px;
+    font-weight: bolder;
+}
+
+#filtroButton {
+    background-color: rgba(255, 90, 90, 1);
+    border: none;
+    padding: 5px 20px;
+    margin: 1px 2px;
+    height: 35px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 60px; /* Completely round edges */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    background-color: none;
+
+}
+
+#filtroButton:hover {
+    background-color: rgba(255, 100, 100, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    
+}
+
+#filtroButton:active {
+    background-color: rgba(255, 100, 110, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.oculto{
+    display: none;
+}
+
+.embassado{
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.janela-modal{
+    width: 60%;
+    height: fit-content;
+    z-index: 1000;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    opacity: 1;
+    top: 20%;
+    background-color: rgba(240, 229, 223, 1);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    padding: 5px;
+}
+
+#fechar-modal{
+    align-self:center; /* Alinha o botão à direita */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.relato{
+    position: relative;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.relato-header{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.relato-header img{
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+}
+
+.usuario-id{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2px;
+}
+
+.usuario-id p{
+    display: inline;
+    margin-left: 5px;
+}
+
+.relato-texto{
+    text-align: left;
+    padding: 10px;
+    height: fit-content;
+    word-wrap: break-word; /* Quebra de linha automática */
+    max-width: 100%; /* Limita a largura do texto ao máximo possível */
+}
+
+#comentarios{
+    height: fit-content;
+    padding: 5px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.comentario{
+    height:fit-content;
+    width: 90%;
+    padding: 5px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+}
+.comentario section{
+    height:fit-content;
+    width: 100%;
+
+}
+#input-comentario {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: fit-content;
+    height: fit-content;
+  }
+  
+  #comentario-input {
+    flex: 1;
+    padding: 5px;
+    border: none;
+    outline: none;
+    resize: none; 
+    overflow: hidden; 
+    font-size: 14px; /* Tamanho da fonte inicial */
+    line-height: 1; /* Altura da linha para espaçamento adequado */
+  }
+  
+  #submit-comentario {
+    width: 30px;
+    height: auto;
+    cursor: pointer;
+  }
+  

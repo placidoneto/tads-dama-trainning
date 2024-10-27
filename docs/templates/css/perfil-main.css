@@ -1,0 +1,246 @@
+.div-form {
+    height: 500px; /* A div-form agora ocupa 100% da altura do main */
+    width: 40%;
+    border: 2px solid rgb(239, 210, 214);
+    border-radius: 40px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    align-items: center;
+    display: block;
+    z-index: 9999999;
+}
+
+form {
+    width: 100%;
+    height: 100%;
+    padding: 15px 70px;  
+    text-align: left;   
+    z-index: 10;  
+}
+
+form h1{
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+
+form label[id='nome'], 
+label[id='senha']{
+    display: block;
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 2px;
+}
+
+fieldset{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+label[id='email-label'],
+label[id='contato-label'] {
+    display: inline-block;
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 2px;
+    justify-content: space-between;
+}
+
+input[type='text'],input[type='password'] {
+    margin-bottom: 5px;
+    width: 100%;
+    height: 25px;
+}
+
+input[type='email'],
+input[type='tel']{
+    height: 25px; 
+    display: flex;
+    width: 98%;
+}
+
+
+form div span {
+    cursor: pointer;
+    user-select: none;
+    position: absolute;
+    right: 0px;
+    top: 40%;
+    transform: translateY(-50%);
+    padding: 2px;
+    background: transparent;
+    border: none;
+    color: black;
+}
+
+span{
+    font-weight: bolder;
+}
+
+.hidden{
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.visivel {
+    opacity: 1;
+}
+
+form div {
+    position: relative;
+}
+
+#submeter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+}
+
+#criar, #cancelar{
+    width: 50%;
+    height: 80%;
+}
+
+#cancelar{
+    display: flex;
+    align-items: flex-start;
+}
+
+#criar{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#criar button{
+    width: 60%;
+    height: 100%;
+}
+
+#cancelar button{
+    width: 60%;
+    height: 100%;
+    background-color: rgb(248, 150, 22);
+}
+
+
+.button-form {
+    background-color: rgba(255, 90, 90, 1);
+    border: none;
+    padding: 5px 20px;
+    margin: 4px 2px;
+    height: 45px;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 60px; /* Completely round edges */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    background-color: none;
+
+}
+
+.button-form:hover {
+    background-color: rgba(255, 100, 100, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    
+}
+
+.button-form:active {
+    /* background-color: rgba(255, 100, 110, 0.2); */
+    opacity: 0.8;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#confirmar{
+    width: 500px;
+    height: 400px;
+    display: none;
+}
+
+.oculto{
+    display: none;
+}
+
+.embassado{
+    opacity: 0.5;
+}
+
+
+.cadastrado{
+    height: 38%;
+    width: 35%;
+    z-index: 99999;
+    display: block;
+    position: fixed;
+    top: 46%;
+    left: 50%;
+    opacity: 1;
+    transform: translate(-50%, -45%);
+    border: 2px solid rgb(239, 210, 214);
+    border-radius: 40px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    background-color: rgba(240, 229, 223, 1);
+    padding-top: 55px;
+
+}
+
+
+.cadastrado-janela{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    
+}
+
+#cadastrado > div:nth-child(1){
+    text-align: center;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 10px;
+    font-size: 13px;
+}
+
+
+
+#cadastrado > div:nth-child(2){
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+    font-size: 10px;
+}
+
+#cadastrado > div:nth-child(2) h1 span{
+    cursor: pointer;
+    user-select: none;
+}
+
+.cadastrado-janela img{
+    width: 25%;
+    height: 40%;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+
+
+
+/* separação visual */
+.borda0{
+    border: none;
+}
+.borda1{
+    border: 1px solid #000;
+}
+.borda2{
+    border: 1px solid #f00;
+}
+/* separação visual */
