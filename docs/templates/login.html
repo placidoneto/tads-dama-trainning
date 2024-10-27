@@ -1,0 +1,112 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/header.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/login-main.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+    <style>
+        main {
+            min-height: 520px;
+            padding: 5px;
+            background-color: rgba(240, 229, 223, 0.7);
+            background-image: url("{% static 'img/bg-cadastro.png' %}");
+            background-size: auto;
+            background-repeat: no-repeat;
+            background-position: bottom left;
+            background-blend-mode: hard-light;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            font-size: 18px;
+        }
+    </style>
+    <title>Login</title>
+</head>
+
+<body>
+    <header class="borda0 header">
+        <div class="borda0 header-div header-div-left">
+            <a href="{% url 'dama:index' %}">
+                <img id="logo-img" src="{% static 'img/logo-dama.png' %}" alt="logomarca do Dama" />
+            </a>
+        </div>
+        <nav class="borda0 header-nav">
+            <ul>
+                <li><a href="{% url 'dama:index' %}">Home</a></li>
+                <li><a href="#main-div2">Quem Somos</a></li>
+                <li><a href="#main-div3">Conheça seus direitos</a></li>
+                <li><a href="#redes">Rede de apoio</a></li>
+            </ul>
+        </nav>
+        <div id="button-header" class="borda0 header-div-right borda0">
+            <button id="bttdenuncia" class="button-header borda0">
+                <a href="{% url 'dama:denuncia' %}">Denunciar</a>
+            </button>
+            <button id="bttcadastro" class="button-header borda0">
+                <a href="{% url 'dama:cadastro' %}">Criar Conta</a>
+            </button>
+        </div>
+    </header>
+
+    <main id="main" class="borda0">
+        <div class="div-form">
+            <form class="borda0 form" action="{% url 'dama:login' %}" method="post" name="login">
+              {% csrf_token %}
+                <h1>Login</h1>
+                <div id="nome-form" class="div-form-div">
+                    <label for="nome">Nome do Usuario</label>
+                    <input type="text" id="nome" name="nome_login" placeholder="Nome de usuário no DAMA" onfocus="removePlaceholder(this.id)" onblur="addPlaceholder(this.id)">
+                </div>
+                <div id="senha-form" class="div-form-div">
+                    <label for="senha">Senha</label>
+                    <div>
+                        <input type="password" id="senha" name="senha_usuario" placeholder="Digite sua senha" onfocus="removePlaceholder(this.id)" onblur="addPlaceholder(this.id)">
+                        <span id="olho" class="visibilidade-senha" onclick="visibilidadeSenha('senha')">👁️</span>
+                    </div>
+                </div>
+
+                <div id="sem-conta" class="div-form-div">
+                    <a href="{% url 'dama:cadastro' %}">Não tem conta no DAMA? Crie uma aqui!</a>
+                </div>
+
+                <div id="submeter" class="borda0">
+                    <div id="cancelar" class="borda0"></div>
+                    <div id="criar" class="borda0">
+                        <button id="entrar" type="submit" class="button-form">Entrar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <div id="logado" class="oculto borda0">
+        <p>Bem vinda(o) ao DAMA, <span id="nome-usuario"></span>! </p>
+    </div>
+
+    <footer class="borda0">
+        <div class="footer-div footer-div-left borda0">
+            <p>emergencia?</p>
+            <h1><span>ligue 180</span></h1>
+        </div>
+        <div class="footer-div footer-div-center borda0">
+            <div class="footer-div-center-top borda0">
+                <h1>Ajuda</h1>
+            </div>
+            <div class="footer-div footer-div-bottom borda0">
+                <p><a href="#">Sobre nós</a></p>
+                <p><a href="#">Seja apoiador</a></p>
+                <p><a href="#">Seja voluntário</a></p>
+                <p><a href="#">Conheça seus direitos</a></p>
+            </div>
+        </div>
+        <div class="footer-div footer-div-right borda0">
+            <img src="{% static 'img/logo_rn.png' %}" alt="">
+        </div>
+    </footer>
+</body>
+</html>

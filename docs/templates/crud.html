@@ -1,0 +1,203 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/header.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/perfil-main.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+
+    <title>CRUD</title>
+
+    <style>
+      main {
+        min-height: 520px;
+        padding: 5px;
+        background-color: rgba(240, 229, 223, 0.8);
+        background-image: url("{% static 'img/bg-cadastro.png' %}");
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-blend-mode: hard-light;
+        background-position: bottom left;       
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        font-size: 18px;     
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <header class="borda0 header">
+      <div class="borda0 header-div header-div-left">
+                <a href="{% url 'dama:index' %}">
+          <img id="logo-img" src="{% static 'img/logo-dama.png' %}" alt="logomarca do Dama" />
+        </a>
+      </div>
+      <nav class="borda0 header-nav">
+        <ul>
+          <li><a href="{% url 'dama:index' %}">Home</a></li>
+          <li><a href="#">Quem Somos</a></li>
+          <li><a href="#">Conheça seus direitos</a></li>
+          <li><a href="#">Rede de apoio</a></li>
+          <li><a href="{% url 'dama:mural' %}">Mural de Força</a></li>
+        </ul>
+      </nav>
+      <div class="borda0 header-div-right">
+
+          <p style="cursor: pointer">
+            {{ nome_login }}
+          </p>
+
+          <button id="voltar" class="button-header">
+            <a href="{% url 'dama:index' %}">Voltar</a>
+        </button>
+      </div>
+    </header>
+
+    <main id="main" class="borda2">
+
+        <div id="div-perfil" class="div-form borda1">
+
+            <div id="dados-perfil" class='borda2'>
+
+              {% if not mensagem_erro %}
+                
+              <h1>Manter perfil do usario - {{ nome_login }} </h1>
+
+              <h2>Tipo do Usuario: {{ tipo_usuario }}</h2>
+          
+              {% if tipo_usuario == 'profissional' %}
+                  <p>Nome Completo: {{ nome_completo }}</p>
+                  <p>Cadastro CRP: {{ cadastro_crp }}</p>
+                  <p>Telefone: {{ telefone }}</p>
+                  <p>Email: {{ email }}</p>
+                  
+              {% elif tipo_usuario == 'ong' %}
+                  <p>Razão Social: {{ razao_social }}</p>
+                  <p>CNPJ: {{ cnpj }}</p>
+                  <p>Telefone: {{ telefone }}</p>
+                  <p>Email: {{ email }}</p>
+              
+              {% else %}
+                  <p>Nome de Login: {{ nome_login }}</p>
+              {% endif %}
+              
+              <div id="div-buttons" class='borda1'>
+                  <button id="atualizar-conta" class="button-header borda1">
+                      <a href="{% url 'dama:index' %}">Atualizar Perfil</a>
+                  </button>
+                  
+                  <button id="deletar-conta" class="button-header borda1">
+                      <a href="{% url 'dama:index' %}">Excluir Perfil</a>
+                  </button>
+              </div>
+          
+          {% else %}
+              <p style="color: red;">{{ mensagem_erro }}</p>
+          {% endif %}
+    
+        <button id="voltar" class="button-header">
+            <a href="{% url 'dama:index' %}">Voltar</a>
+        </button>
+        </div>
+    </main>
+
+    <div id="cadastrado" class="oculto borda0">
+      <div class="cadastrado-janela borda0">
+          <h1>
+            Usuaria(o) cadastrada(o) com sucesso!<br>
+          </h1>
+      </div>
+      <div class="cadastrado-janela borda0">
+          <h1>
+            <span onclick="Login()">Acesse o DAMA com a sua nova conta aqui</span>            
+          </h1>
+      </div>
+    </div>
+
+
+    <div id="atualizar-dados" class="div-form borda2 oculto" hidden>
+      <form class="borda0 form" action="{% url 'dama:cadastro' %}" method="post" name="cadastro">
+        {% csrf_token %}
+
+        <h1>Cadastro</h1>
+        <label for="nome_login" >Nome de Login</label>
+        <input type="text" id="nome" name="nome_login" placeholder="Login de acesso ao DAMA" onfocus="removePlaceholder(this.id)" onblur="addPlaceholder(this.id)">
+        
+        <label for="senha">Senha</label>
+        <div>
+          <input type="password" id="senha" name="senha" placeholder="Digite sua senha"  onfocus="removePlaceholder(this.id)" onblur="addPlaceholder(this.id)">
+          <span class="visibilidade-senha" onclick="visibilidadeSenha('senha')">👁️</span>
+        </div>
+      
+
+        <label for="usuario">Tipo de Usuário</label>
+        <select id="usuario" name="usuario" form="cadastro" onchange="mostrarCampos(this.value)">
+          <option value="anom">Anonimo</option>
+          <option value="ong">Organização Não-Governamental</option>
+          <option value="pro">Profissional de Apoio</option>
+        </select>
+
+        <label id="nome-usuario-label" class="hidden" for="nome-usuario-input"></label>
+        <input id="nome-usuario-input" class="hidden" type="text"  name=""  maxlength="100" onfocus="removePlaceholder(this.id)" onblur="addPlaceholder(this.id)" pattern="[0-9]"/>
+        
+
+        <label id="numero-cadastro-label" class="hidden" for="numero-cadastro-input"></label>
+        <input id="numero-cadastro-input" class="hidden" type="text"  name=""  maxlength="14" onfocus="removePlaceholder(this.id)" onblur="addPlaceholder(this.id)" pattern="[0-9]"/>
+         
+        <fieldset class="borda0">
+          <div id="fieldset-left">
+            <label for="email" class="hidden">Email</label>
+            <input id="email" class="hidden" type="email"  name="email" placeholder="exemplo@email.com" maxlength="30" onfocus="removePlaceholder(this.id)" onblur="addPlaceholder(this.id)" pattern="[a-zA-Z0-9._@-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"/> 
+          </div>
+          <div id="fieldset-right">
+            <label for="contato" class="hidden">Contato</label>
+            <input id="contato" class="hidden" type="tel"  name="contato" placeholder="84 9XXXX-XXXX" maxlength="14" onfocus="removePlaceholder(this.id)" onblur="addPlaceholder(this.id)" pattern="[a-zA-Z0-9._@-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"/>  
+          </div>
+        </fieldset>
+
+        <div id="submeter" class="borda0">
+          <div id="cancelar" class="borda0">
+            <button class="button-form">Cancelar</button>
+          </div>
+          <div id="criar" class="borda0">
+            <button id="confirmar-button" class="button-form" type="submit" >Cadastrar</button>
+          </div>
+        </div>
+        
+      </form>
+    </div>
+
+
+    <footer class="borda0">
+      <div class="footer-div footer-div-left borda0">
+          <p>emergencia?</p>
+          <h1><span>ligue 180</span></h1>
+      </div>
+      <div class="footer-div footer-div-center borda0">
+        <div class="footer-div-center-top borda0" >
+            <h1>Ajuda</h1>
+        </div>
+
+        <div class="footer-div-center-bottom borda0">
+          <p><a href="#">Sobre nós</a></p>
+          <p><a href="#">Seja apoiador</a></p>
+          <p><a href="#">Seja voluntário</a></p>
+          <p><a href="#">Conheça seus direitos</a></p>
+        </div>
+
+      </div>
+
+      <div class="footer-div footer-div-right borda0">
+        <img src="{% static 'img/logo_rn.png' %}" alt="">
+      </div>
+  </footer>
+
+    <script src="{% static 'js/perfil.js' %}"></script>
+  </body>
+</html>

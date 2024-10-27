@@ -1,0 +1,238 @@
+
+
+
+.embassado{
+    opacity: 0.5;
+}
+
+.div-form {
+    height: 450px; /* A div-form agora ocupa 100% da altura do main */
+    width: 40%;
+    border: 2px solid rgb(239, 210, 214);
+    border-radius: 40px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    text-align: left;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+.div-form-div {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+form {
+    display: inline-block;
+    text-align: left;   
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+
+    flex-direction: column; 
+    width: 90%; 
+    height: 100%;
+}
+
+form h1{
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+input{
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+
+label[id='nome'], 
+label[id='senha']{
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+p{
+    margin-bottom: 10px;
+}
+
+p span{
+    cursor: pointer;
+}
+
+fieldset{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+
+input[type='text'],input[type='password'] {
+    margin-bottom: 5px;
+    width: 100%;
+    height: 25px;
+}
+
+form div {
+    position: relative; /* posição do olho */
+}
+
+#olho {
+    cursor: pointer;
+    user-select: none;
+    position: absolute;
+    right: 0px;
+    top: 40%;
+    transform: translateY(-50%);
+    padding: 2px;
+    background: transparent;
+    border: none;
+    color: black;
+}
+
+
+.hidden{
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.visivel {
+    opacity: 1;
+}
+
+#submeter{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 0px;
+    width: 100%;
+}
+
+#criar{
+    width: 40%;
+    height: 80%;
+}
+
+#sem-conta{
+    display: inline;
+    text-align: left;
+    margin-top: 5px;
+}
+
+#criar{
+    display: flex;
+    justify-content: flex-end;
+}
+
+#criar button{
+    width: 60%;
+    height: 100%;
+}
+
+#cancelar button{
+    width: 60%;
+    height: 100%;
+    background-color: rgb(248, 150, 22);
+}
+
+.button-form {
+    background-color: rgba(255, 90, 90, 1);
+    border: none;
+    padding: 10px 20px;
+    margin: 4px 2px;
+    height: 55px;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 60px; /* Completely round edges */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    background-color: none;
+
+}
+
+.button-form:hover {
+    background-color: rgba(255, 100, 100, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    
+}
+
+.button-form:active {
+    /* background-color: rgba(255, 100, 110, 0.2); */
+    opacity: 0.8;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+#confirmar{
+    width: 500px;
+    height: 400px;
+    display: none;
+}
+
+.oculto{
+    display: none;
+}
+
+.embassado{
+    opacity: 0.5;
+}
+
+.logado{
+    height: 36%;
+    width: 35%;
+    z-index: 99999;
+    display: flex;
+    position: fixed;
+    top: 52%;
+    left: 50%;
+    opacity: 1;
+    transform: translate(-50%, -45%);
+    /* border: 2px solid rgb(239, 210, 214); */
+    border-radius: 40px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    background-color: rgba(240, 229, 223, 1);
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.logado-janela{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+
+
+/* #logado > div:nth-child(2){
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+    font-size: 10px;
+}
+
+#logado > div:nth-child(2) h1 span{
+    cursor: pointer;
+    user-select: none;
+} */
+
+.logado-janela img{
+    width: 25%;
+    height: 40%;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+

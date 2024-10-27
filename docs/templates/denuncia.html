@@ -1,0 +1,177 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/header.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/denuncia-main.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+
+
+    <style>
+      main {
+    min-height: 520px;
+    padding: 0px;
+    background-color: rgba(240, 229, 223, 0.8);
+    background-image: url("{% static 'img/bg-cadastro.png' %}");
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-blend-mode: hard-light;
+    background-position: bottom left;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 18px;
+     
+}
+
+    </style>
+
+    <title>Denuncia</title>
+  </head>
+
+  <body>
+    <header class="borda0 header">
+      <div class="borda0 header-div header-div-left">
+        <a href="{% url 'dama:index' %}">
+          <img id="logo-img" src="{% static 'img/logo-dama.png' %}" alt="logomarca do Dama" />
+        </a>
+      </div>
+      <nav class="borda0 header-nav">
+        <ul>
+          <li><a href="{% url 'dama:index' %}">Home</a></li>
+          <li><a >Quem Somos</a></li>
+          <li><a >Conheça seus direitos</a></li>
+          <li><a >Rede de apoio</a></li>
+          <li><a href="{% url 'dama:index' %}">Mural de Força</a></li>
+        </ul>
+      </nav>
+      <div class="borda0 header-div-right">
+        <button id="header-login" class="button-header">
+          <a href="{% url 'dama:login' %}">Login</a>
+        </button>
+        <button id="header-conta" class="button-header">
+          <a href="{% url 'dama:cadastro' %}">Criar Conta</a>
+        </button>
+      </div>
+    </header>
+
+    <main id="main" class="borda0">
+
+      <div id="div-form" class=" borda0">
+        <form id="denuncia" class="borda0 form" action="{% url 'dama:denuncia' %}" method="post"  >
+          {% csrf_token %}
+          <h1>Denúncia</h1>
+          
+          <label    for="locall">Tipo do Local</label>
+          <select id="local" name="locall"     >
+            <option value="" selected>Local onde ocorreu a violência</option>
+            <option value="casa">Minha residência</option>
+            <option value="trabalho">Trabalho</option>
+            <option value="estabelecimento">Estabelecimento</option>
+            <option value="transporte-app">Transporte público ou por Aplicativo</option>
+          </select>
+
+          <label    for="relacao">Relação com o autor</label>
+          <select id="relacao-autor"  name="relacao"     >
+            <option value="" selected>Informe a relação com o agressor</option>
+            <option value="companheiro">Companheiro(a)</option>
+            <option value="parente">Parente</option>
+            <option value="rel-colega">Colega/amigo(a)</option>
+            <option value="nenhuma">Nenhuma</option>
+          </select>
+
+          <label    for="zona-cidade">Zona da Cidade</label>
+          <select id="zona"  name="zona-cidade"     >
+            <option value="" selected>Área de Natal onde ocorreu a agressão</option>
+            <option value="norte">Norte</option>
+            <option value="sul">Sul</option>
+            <option value="leste">Leste</option>
+            <option value="oeste">Oeste</option>
+          </select>
+
+          <label    for="tipo-vitima">Vitima da Agressão</label>
+          <select id="tipo-vitima"  name="tipo-vitima"     >
+            <option value="" selected></option>
+            <option value="eu">Eu mesma</option>
+            <option value="parente">Parente</option>
+            <option value="vit-colega">Colega/amiga</option>
+            <option value="terceira">Terceira</option>
+          </select>
+
+          <label    for="idade-vitima">Idade da Vítima</label>
+          <input    id="idade" name="idade-vitima" type="text">
+          
+          <label    for="descricaoo">Descrição do Ocorrido (opcional)</label>
+          <textarea    name="descricaoo" id="descricao" cols="30" rows="10"></textarea>
+
+          <div id="submeter" class="borda0">
+            <div id="cancelar" class="borda0">
+            </div>
+            <div id="criar" class="borda0">
+              <button    id="denunciar" class="button-form" type="submit">Denunciar</button>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </main>
+
+    <!-- {% if mensagem_erro and not mensagem_sucesso %}
+
+        <div id="mensagem-erro">
+          <p>
+            {{ mensagem_erro }}
+          </p>
+          <button id="header-login" class="button-header">
+            <a href="{% url 'dama:denuncia' %}">Nova Denuncia</a>
+          </button>
+          <button id="header-conta" class="button-header">
+            <a href="{% url 'dama:index' %}">Voltar</a>
+          </button>
+       </div>
+      {% elif not mensagem_erro and mensagem_sucesso %}
+
+       <div id="mensagem-sucesso">
+         <p>
+           {{ mensagem_sucesso }}
+         </p>
+         <button id="header-login" class="button-header">
+           <a href="{% url 'dama:denuncia' %}">Nova Denuncia</a>
+         </button>
+         <button id="header-conta" class="button-header">
+           <a href="{% url 'dama:index' %}">Voltar</a>
+         </button>
+      </div>
+      {% endif %} -->
+
+
+    <footer class="borda0">
+      <div class="footer-div footer-div-left borda0">
+          <p>emergencia?</p>
+          <h1><span>ligue 180</span></h1>
+      </div>
+      <div class="footer-div footer-div-center borda0">
+        <div class="footer-div-center-top borda0" >
+            <h1>Ajuda</h1>
+        </div>
+
+        <div class="footer-div-center-bottom borda0">
+          <p><a href="#">Sobre nós</a></p>
+          <p><a href="#">Seja apoiador</a></p>
+          <p><a href="#">Seja voluntário</a></p>
+          <p><a href="#">Conheça seus direitos</a></p>
+        </div>
+
+      </div>
+
+      <div class="footer-div footer-div-right borda0">
+        <img src="{% static 'img/logo_rn.png' %}" alt="">
+      </div>
+    </footer>
+
+  </body>
+</html>

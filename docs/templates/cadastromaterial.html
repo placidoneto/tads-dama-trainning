@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/mural-main.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+
+    <title>Mural de Força</title>
+  </head>
+
+  <body>
+    <header class="borda0">
+      <div class="borda0 header-div header-div-left">
+        <img id="logo-img" src="images/logo-dama.png" alt="logomarca do Dama" />
+      </div>
+      <nav class="borda0 header-nav">
+        <ul>
+          <li><a id="home">Home</a></li>
+          <li><a href="#main-div2">Quem Somos</a></li>
+          <li><a href="#main-div3">Conheça seus direitos</a></li>
+          <li><a href="#redes">Rede de apoio</a></li>
+        </ul>
+      </nav>
+      <div class="borda0 header-div-right">
+        <button id="header-login" class="button-header" >Login</button>
+        <button id="header-conta" class="button-header" >Criar Conta</button>
+      </div>
+    </header>
+
+
+    <main>
+        <form name="material" action="{% url 'dama:cadastromaterial' %}" method="post" enctype=multipart/form-data>
+            {% csrf_token %}
+            
+            <div>
+                <h3>Escreva seu material Educativo</h3>
+                <textarea name="conteudo" id="text" cols="30" rows="10"></textarea>
+                <input type="file" name="arquivo" id=""> Foto
+            </div>
+            <div>
+                <h3>Termos e Condições do site </h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae nulla 
+                    doloremque quibusdam iure fugit? Debitis repellendus aspernatur nemo natus
+                    voluptate, tenetur velit rerum, nobis, doloremque neque nam. Iusto, eum laudantium!
+                </p>
+                <input type="checkbox" name="checa" id="aceita"> Aceito os termos do site </input>
+            </div>
+            <div>
+                <button type="submit">
+                    Publicar o Material
+                </button>
+            </div>
+        </form> 
+            
+        </main>
+        
+        
+    
+    <footer class="borda0">
+        <div class="footer-div footer-div-left borda0">
+            <p>emergencia?</p>
+            <h1><span>ligue 180</span></h1>
+        </div>
+        <div class="footer-div footer-div-center borda0">
+            <div class="footer-div-center-top borda0" >
+                <h1>Ajuda</h1>
+            </div>
+            <div class="footer-div-center-bottom borda0">
+                <p><a href="#">Sobre nós</a></p>
+                <p><a href="#">Seja apoiador</a></p>
+                <p><a href="#">Seja voluntário</a></p>
+                <p><a href="#">Conheça seus direitos</a></p>
+            </div>
+        </div>
+        <div class="footer-div footer-div-right borda0">
+            <img src="images/logo_rn.png" alt="">
+        </div>
+    </footer>
+</body>
+</html>

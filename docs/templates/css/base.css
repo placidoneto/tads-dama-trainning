@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+html, body{
+    height: 100%;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(240, 229, 223, 1);
+    
+}
+
+body{
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    background-color: rgba(240, 229, 223, 0.5);
+
+}
+
+label{
+    user-select: none;
+}
+
+
+/* Estilização do header */
+
+
+header {
+    width: 100%;
+    max-width: 1366px;
+    height: 8.3%;
+    min-height: 90px;
+    max-height: 120px;
+    padding: 0px 10px;
+    background-color: rgba(240, 229, 223, 1);
+
+}
+
+/* Estilização do main */
+main {
+    width: 100%;
+    max-width: 1366px;
+    height: 83.4%;
+    max-height: 1200px;
+    min-height: 1200px;
+    text-align: center;
+}
+
+/* Estilização do footer */
+footer {
+    width: 100%;
+    max-width: 1366px;
+    height: 8.3%; 
+    height: 120px;
+    padding: 5px 15px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    background-color: rgba(240, 229, 223, 1);
+
+}
+body{
+    user-select: none;
+}
+
+h1, span {
+    color: rgba(165, 55, 154, 1);
+}
+
+
+/* separação visual */
+.borda0{
+    border: none;
+}
+.borda1{
+    border: 1px solid #000;
+}
+.borda2{
+    border: 1px solid #f00;
+}
+/* separação visual */
+
+.button-header a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}

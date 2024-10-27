@@ -1,0 +1,112 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/header.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}" />
+
+
+    <title>{% block title %}Minha Página{% endblock %}</title>
+</head>
+
+<header>
+<div class="borda0 header-div header-div-left">
+    <a href="{% url 'dama:index' %}">
+        <img id="logo-img" src="{% static 'img/logo-dama.png' %}" alt="logomarca do Dama" />
+    </a>
+    </div>
+    <nav class="borda0 header-nav">
+    <ul>
+        <li><a href="#cabecalho">Home</a></li>
+        <li><a href="#main-div2">Quem Somos</a></li>
+        <li><a href="#main-div3">Conheça seus direitos</a></li>
+        <li><a href="#redes">Rede de apoio</a></li>
+    </ul>
+    </nav>
+    <div class="borda0 header-div-right">
+
+    {% if request.user.is_authenticated %}
+
+    <div id="usuario-logado" class="borda2">
+        <p>{{ request.user.username }}!</p>
+    </div>
+    
+    <div id="logout" class="borda2">
+        <form method="post" action="{% url 'logout' %}" style="display: inline;">
+        <button class="button-header" type="submit">Sair</button>
+        </form>
+    </div>
+
+    {% else %}
+
+    <button id="header-login" class="button-header">
+        <a href="{% url 'dama:login' %}">Login</a>
+    </button>
+    <button id="header-conta" class="button-header">
+        <a href="{% url 'dama:cadastro' %}">Criar Conta</a>
+    </button>
+
+    {% endif %}
+    </div>
+</header>
+
+<body>
+    <header id="cabecalho" class="borda0">
+        {% block header %}{% endblock %}
+    </header>
+
+    <main id="main" class="borda0">
+        {% block content %}
+        
+        <h2>Material Publicado</h2>
+        <p><strong>Data de Publicação:</strong> {{ material.data_publicacao }}</p>
+        <p><strong>Usuário:</strong> {{ material.usuario.username }}</p>
+        <p><strong>Conteúdo:</strong> {{ material.conteudo }}</p>
+
+        {% if material.arquivo_anexo %}
+          <p><strong>Arquivo Anexo:</strong> <a href="{{ material.arquivo_anexo.url }}">{{ material.arquivo_anexo.name }}</a></p>
+        {% endif %}
+
+        {% if material.referencias %}
+          <p><strong>Referências:</strong> <a href="{{ material.referencias }}">{{ material.referencias }}</a></p>
+        {% endif %}
+
+        {% endblock %}
+ </main>
+
+    <footer class="borda0">
+        {% block footer %}{% endblock %}
+    </footer>
+</body>
+
+
+<footer>
+
+    <div class="footer-div footer-div-left borda0">
+        <p>emergencia?</p>
+        <h1><span>ligue 180</span></h1>
+    </div>
+    <div class="footer-div footer-div-center borda0">
+      <div class="footer-div-center-top borda0" >
+          <h1>Ajuda</h1>
+      </div>
+  
+      <div class="footer-div-center-bottom borda0">
+        <p><a href="#">Sobre nós</a></p>
+        <p><a href="#">Seja apoiador</a></p>
+        <p><a href="#">Seja voluntário</a></p>
+        <p><a href="#">Conheça seus direitos</a></p>
+      </div>
+  
+    </div>
+  
+    <div class="footer-div footer-div-right borda0">
+      <img src="{% static 'img/logo_rn.png' %}" alt="logo_rn">
+    </div>
+</footer>
+
+</html>
