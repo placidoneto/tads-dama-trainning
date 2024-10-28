@@ -1,5 +1,4 @@
 from django.urls import include, path, re_path
-
 from .usuario import usuario_router
 from .ong import ong_router
 
