@@ -8,7 +8,6 @@ class ONG(models.Model):
     contato_reponsavel = models.CharField(max_length=60)
     tipo_servico = models.CharField(max_length=100)
     localizacao = models.CharField(max_length=200)
-
     ativo = models.BooleanField(default=True)
     data_criacao = models.DateTimeField(auto_now_add=True)
     
