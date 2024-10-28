@@ -7,5 +7,3 @@ class ONGAdmin(admin.ModelAdmin):
     search_fields = ('nome', 'responsavel','localizacao','tipo_servico')  
     ordering = ('data_criacao',)  
 
-
-admin.site.register(ONG, ONGAdmin)

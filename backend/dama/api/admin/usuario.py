@@ -6,5 +6,3 @@ class UsuarioAdmin(admin.ModelAdmin):
     list_filter = ('eh_ong', 'ativo', 'administrador') 
     search_fields = ('nome', 'email') 
     ordering = ('nome') 
-
-admin.site.register(Usuario, UsuarioAdmin)
