@@ -12,9 +12,9 @@
 
 - ![Django Rest Framework](https://img.shields.io/badge/Django%20Rest-Framework-green)
 - ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-blue)
-- ![Angular](https://img.shields.io/badge/Angular)
-- ![TypeScript](https://img.shields.io/badge/TypeScript-cyan)
-- ![Bootstrap](https://img.shields.io/badge/Bootstrap)
+- ![Angular](https://img.shields.io/badge/Angular-DD0031?logo=angular&logoColor=white)
+- ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+- ![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?logo=bootstrap&logoColor=white)
 
 # 📃 Documentação
 
