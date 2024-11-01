@@ -24,3 +24,5 @@ Clique em cada um dos links abaixo para acessar o artefato específico.
 1. [Diagrama de caso de uso]()
 2. [Diagrama de caso de uso por prioridade]()
 3. [Detalhamentos de casos de uso]()
+
+
