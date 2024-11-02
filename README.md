@@ -52,5 +52,62 @@ ng serve
 
 ### Pré-requisitos: 
 
-### Execução do projeto:
+Essas instruções fornecem instruções detalhadas sobre como configurar e iniciar o ambiente de desenvolvimento para o backend do projeto DAMA.
 
+
+### Para configuração do ambiente virtual: 
+
+1. Crie o ambiente virtual
+```
+python -m venv env 
+```
+Esse comando cria um ambiente virtual que isola as dependências do projeto.
+
+2. Ative o ambiente virtual
+   
+Linux/MacOS:
+```
+source ./env/bin/activate
+```
+Windows:
+```
+.\env\Scripts\activate
+```
+
+3. Instale as dependências
+Instale as dependências necessárias para o backend executando o seguinte comando:
+```
+pip install -r requirements.txt
+```
+
+4. Acesse o repositório do projeto:
+```
+cd dama 
+```
+
+5. Inicie o servidor backend localmente:
+```
+python3 manage.py runserver
+```
+
+### Populando o banco de dados:
+
+1. Abra uma nova janela ou aba do terminal e navegue até a pasta onde está o arquivo manage.py do projeto
+2. Crie um super usuário e verifique no django admin as tabelas criadas:
+```
+python3 manage.py createsuperuser
+```
+3. Utilize o comando onde vamos utilizar as seeds:
+```
+python3 manage.py seed-ong
+ou
+python3 manage.py seed-usuario
+```
+
+### Outras formas de visualizar o backend:
+
+1. Abra em seu navegador, após iniciar a aplicação localmente, no seguinte link:
+```
+localhost:8000/api/test
+```
+Este link abrirá o Swagger, onde é possível testar os endpoints e visualizar as respostas das requisições de forma clara e interativa. 
