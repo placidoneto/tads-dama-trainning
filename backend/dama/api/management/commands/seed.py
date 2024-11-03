@@ -1,7 +1,7 @@
-from django.core.management.base import BaseCommand
-from api.models import Usuario, ONG
+from api.models import Usuario, ONG 
 from api.seed.ong import ONGFactory 
 from api.seed.usuario import UsuarioFactory
+from django.core.management.base import BaseCommand
 
 
 class Command(BaseCommand):
