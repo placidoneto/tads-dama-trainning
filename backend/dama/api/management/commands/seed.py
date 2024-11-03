@@ -1,7 +1,8 @@
 from django.core.management.base import BaseCommand
-from api.models import Usuario, ONG
+from api.models import Usuario, ONG, Relato
 from api.seed.ong import ONGFactory 
 from api.seed.usuario import UsuarioFactory
+from api.seed.relato import RelatoFactory
 
 
 class Command(BaseCommand):
@@ -15,5 +16,8 @@ class Command(BaseCommand):
         # Crie ONGs
         for _ in range(10):  # Cria 5 ONGs
             ONGFactory()
+
+        for _ in range(1000):
+            RelatoFactory()
 
         self.stdout.write(self.style.SUCCESS('Database seeded successfully!'))
