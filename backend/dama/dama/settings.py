@@ -29,11 +29,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'api',
     'dama',
-    'rest_framework',
-    'django_filters',
-    'corsheaders',
+    'rest_framework', 
     'rest_framework_simplejwt',
-    'import_export',
     'drf_yasg',
 ]
 
@@ -50,8 +47,7 @@ REST_FRAMEWORK = {
     ),
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.IsAuthenticated",
-    ],
-    "DEFAULT_FILTER_BACKENDS": ("django_filters.rest_framework.DjangoFilterBackend",),
+    ]
 }
 
 if DEBUG == 0:
@@ -119,15 +115,13 @@ WSGI_APPLICATION = 'dama.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST'),
-        'PORT': os.getenv('DB_PORT'),
+        'NAME': 'dama',
+        'USER': 'placidoneto',
+        'PASSWORD': 'placidoneto',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
-
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {

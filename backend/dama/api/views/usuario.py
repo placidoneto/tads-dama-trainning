@@ -1,4 +1,4 @@
-from django_filters.rest_framework import DjangoFilterBackend
+#from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import viewsets
 from api.models import Usuario
 from rest_framework.permissions import IsAuthenticated
@@ -11,7 +11,7 @@ from rest_framework.authentication import TokenAuthentication
 class UsuarioViewSet(viewsets.ModelViewSet):
     serializer_class = UsuarioSerializer
     http_method_names = ['get', 'post']
-    filter_backends = [DjangoFilterBackend]
+    #filter_backends = [DjangoFilterBackend]
     permission_classes = [IsAuthenticated | TodosPodemCriar]
     authentication_classes = [TokenAuthentication] 
     queryset = Usuario.objects.all()
